@@ -1,0 +1,22 @@
+native 
+
+user klik link halaman web atau klik submit -> file.php
+misal : hapus.php
+		simpan.php
+		<a href="hapus.php">hapus</a>
+		
+		
+FW (CI4, Laravel)		
+user klik link halaman web atau klik submit
+-> memanggil route -> menjalankan controller -> memanggil method
+
+		<a href="<?=site_url('hapusUser');?>">hapus</a>
+
+		
+		untuk menyisipkan gambar, css, js, video, audio gunakan 
+		<?=base_url('namafolder/gambar.jp');?>
+		
+		
+Membuat Halaman fasiltas
+1. buat view fasiltas, klik folder view -> new file --> ketik fasiltas.php
+1. buat view jurusan, klik folder view -> new file --> ketik jurusan.php

@@ -1,0 +1,58 @@
+Studi kasus membuat aplikasi PPDB ONLINE SMK Nusantara
+=========================================================
+Deskripsi
+Siswa bisa mendaftar mandiri via web ppdb
+web ppdb isinya :
+ucapan selamat datang
+menu fasilitas
+menu jurusan
+menu daftar
+
+
+A. Siapkan project web_ppdb
+	1. jalankan vscode
+	2. buka terminal
+	3. jalankan perintah
+	
+	composer create-project codeigniter4/appstarter web_ppdb --no-dev
+
+B. Open project web_ppdb	
+	1. File ==> open folder 
+	2. pilih web_ppdb
+	3. klik select folder
+	4. edit env ubah nama menjadi .env
+	5. doube klik .env
+	6. ubah bagian
+	 
+	  # CI_ENVIRONMENT = production
+
+	  menjadi
+	  CI_ENVIRONMENT = development
+	  
+C. Jalankan project
+		1. Pilih menu terminal
+		2. klik new terminal
+		
+		
+D. membuat routing
+	1. buka file routes.php yang berada di folder app/config
+	2. tambah dua routes baru
+	
+		$routes->get('/jurusan', 'Home::menuJurusan');
+		$routes->get('/fasilitas', 'Home::menuFasilitas');
+	3. Simpan
+	
+E. download / cari template
+
+F. Menggunakan template
+	1. extract template
+    2. ubah file index.html di template menjadi beranda.php
+    3. pindahkan semua file css dan js ke folder public
+    4.  merubah method index di controller Home 
+        ubah bagian
+
+	return view('welcome_message');
+	menjadi
+	return view('beranda');		
+
+G. Merubah menu	
