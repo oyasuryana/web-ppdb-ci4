@@ -2,31 +2,29 @@
 <?=$this->extend('beranda');?>
 <?=$this->section('isi_web');?>
 
-<table class="table table-hover text-left">
-    <thead class=" bg-success">
-        <tr>
-        <th>#</th>
-        <th>Jurusan</th>
-        <th>Deskripsi</th>
-        <th>Foto</th>
-        </tr>
-    </thead>
+<div class="row">
 <?php
 if(isset($daftarJurusan)){
     $html=null;
     $no=null;
     foreach($daftarJurusan as $row){
         $no++;
-        $html .='<tr>';
-        $html .='<td>'.$no.'</td>';
-        $html .='<td>'.$row['nama_jurusan'].'</td>';
-        $html .='<td>'.$row['deskripsi_jurusan'].'</td>';
-        $html .='<td>'.$row['foto_jurusan'].'</td>';
-        $html .='</tr>';
+        $html .='<div class="col-md-3">';
+        $html .='   <div class="panel panel-success"  style="min-height:400px">';
+        $html .='       <div class="panel-heading text-center">';
+        $html .='       <h4>'.$row['nama_jurusan'].'</h4>';
+        $html .='       </div>';
+        $html .='       <div class="panel-body">';
+        $html .='     <p><img src="'.base_url('/uploads/'.$row['foto_jurusan']).'" class="img-thumbnail"></p>';
+        $html .='           <p>'.$row['deskripsi_jurusan'].'</p>';
+        $html .='       </div>';
+        $html .='   </div>';
+        $html .='</div>';
     }
     echo $html; 
 }
 ?>
 
-</table>
+</div>
+
 <?=$this->endSection();?>

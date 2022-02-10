@@ -32,7 +32,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-// untuk menampilkan halaman depan (CI3 default route / Home Route  )
+// untuk menampilkan halaman depan 
+
 $routes->get('/', 'Home::index');
 
 // untuk menampilkan menu jurusan
@@ -48,7 +49,30 @@ $routes->get('/daftar', 'Pendaftaran::index');
 $routes->post('/simpan-pendaftaran', 'Pendaftaran::simpan');
 
 
+// untuk menampilkan form login
+$routes->get('/login', 'Loginpetugas::index');
+$routes->post('/login', 'Loginpetugas::index');
 
+######################### HALAMAN ADMIN #####################
+// untuk menampilkan halaman dashbord
+
+$routes->get('/dashboard', 'Dashboardpetugas::index');
+$routes->get('/tampil-fasilitas', 'Fasilitas::index');
+
+// untuk form fasilitas
+$routes->get('/form-fasilitas', 'Fasilitas::tambah');
+
+// untuk simpan fasilitas
+$routes->post('/form-fasilitas', 'Fasilitas::tambah');
+
+// untuk edit fasilitas
+$routes->get('/edit-fasilitas/(:num)', 'Fasilitas::edit/$1');
+
+// untuk update fasilitas
+$routes->get('/edit-fasilitas', 'Fasilitas::edit');
+
+// untuk hapus fasilitas
+$routes->get('/hapus-fasilitas/(:num)', 'Fasilitas::hapus/$1');
 
 
 /*

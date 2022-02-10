@@ -12,6 +12,7 @@ use Psr\Log\LoggerInterface;
 use App\Models\MFasilitas;
 use App\Models\MJurusan;
 use App\Models\MPendaftaran;
+use App\Models\MPengguna;
 /**
  * Class BaseController
  *
@@ -33,6 +34,7 @@ class BaseController extends Controller
     protected $fasilitas;
     protected $jurusan;
     protected $pendaftaran;
+    protected $pengguna;
     /**
      * An array of helpers to be loaded automatically upon
      * class instantiation. These helpers will be available
@@ -54,6 +56,7 @@ class BaseController extends Controller
          $this->fasilitas = NEW MFasilitas;   
          $this->jurusan = NEW MJurusan;   
          $this->pendaftaran = NEW MPendaftaran;   
+         $this->pengguna = NEW MPengguna;   
         // E.g.: $this->session = \Config\Services::session();
     }
 }
